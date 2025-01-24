@@ -45,7 +45,7 @@ This sample application is built with [Next.js](https://nextjs.org/) and demonst
    - When users choose values for _all_ variant options, you should determine which _Variant_ matches that selection.
    - Once a specific variant is identified:
      - Update the **price** displayed on the page to reflect that variant’s price.
-     - Navigate to the right **carousel image** to match the selected variant (you’ll find the relevant image index in each variant).
+     - Navigate to the correct **carousel image** to match the selected variant (you’ll find the relevant image index in each variant).
 
 > [!TIP]
 > We use the shadcn/ui Carousel, use their docs to figure out how to navigate to a given slide: https://ui.shadcn.com/docs/components/carousel
@@ -78,8 +78,6 @@ This sample application is built with [Next.js](https://nextjs.org/) and demonst
   We’re looking for clean, well-structured, and readable code. Comments are welcome if something needs extra explanation.
 - **Prettier**
   At MyDeal we use Prettier to format our code. Please make sure you have Prettier running locally to format all your code automatically.
-- **No Extra-Dependencies**
-  You shouldn't need to install anything on top of what's already in the project.
 
 ## Tips & Suggestions
 
