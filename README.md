@@ -78,6 +78,8 @@ This sample application is built with [Next.js](https://nextjs.org/) and demonst
   We’re looking for clean, well-structured, and readable code. Comments are welcome if something needs extra explanation.
 - **Prettier**
   At MyDeal we use Prettier to format our code. Please make sure you have Prettier running locally to format all your code automatically.
+- **Separation of Concerns**
+  Can we separate the rendering from the business logic to keep the codebase clean?
 
 ## Tips & Suggestions
 
