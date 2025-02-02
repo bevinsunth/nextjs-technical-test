@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { Product } from "@/types/product";
+import { Product, VariantOption } from "@/types/product";
 
 interface ProductDetailsProps {
   product: Product;
@@ -46,12 +46,49 @@ export const ProductDetails = ({ product }: ProductDetailsProps) => {
           ${product.price}
         </p>
 
-        {/* Add the Selects here */}
+        <div className="flex flex-row gap-2 my-4">
+          {product.variantOptions.map((variantOption) => (
+            <VariantSelect
+              key={variantOption.id}
+              variantOption={variantOption}
+            />
+          ))}
+        </div>
 
         <Button className="mt-4 font-semibold" size="lg">
           Add to cart
         </Button>
       </div>
     </div>
+  );
+};
+
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const VariantSelect = ({ variantOption }: { variantOption: VariantOption }) => {
+  return (
+    <Select>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder={variantOption.name} />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>{variantOption.name}</SelectLabel>
+          {variantOption.values.map((value) => (
+            <SelectItem key={value.id} value={value.value}>
+              {value.value}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
